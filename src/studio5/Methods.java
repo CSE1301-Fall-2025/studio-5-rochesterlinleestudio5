@@ -14,7 +14,7 @@ public class Methods {
 	 * @return the Euclidean distance between (x1,y1) and (x2,y2)
 	 */
 	public static double distanceBetween(double x1, double y1, double x2, double y2) {
-		double distance = 0;
+		double distance = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
 		return distance;
@@ -29,7 +29,13 @@ public class Methods {
 	 */
 	public static void drawBullsEye(double x, double y, double radius) {
 		StdDraw.setPenColor(StdDraw.BLACK);
-		StdDraw.filledCircle(x, y, radius);
+		StdDraw.filledCircle(0.5, 0.5, 0.5);
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.filledCircle(0.5, 0.5, 0.35);
+		StdDraw.setPenColor(StdDraw.RED);
+		StdDraw.filledCircle(0.5,0.5,0.25);
+		StdDraw.setPenColor(StdDraw.YELLOW);
+		StdDraw.filledCircle(0.5,0.5,0.15);
 
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
@@ -73,10 +79,16 @@ public class Methods {
 	 * @return the sum of the elements in values
 	 */
 	public static int arraySum(int[] values) {
-		int sum = 0;
+		int sum =0;
+		for(int i = 0; i < values.length; i++) {
+			sum += values[i];
 		// FIXME: Compute the sum of the values in an array
 		
+		}
 		return sum;
+
+		
+		
 	}
 
 	/**
